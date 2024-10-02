@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices and Advice</title>
+    <style>
+        body {
+            background-image: url('your-background-image.jpg'); /* Replace with your natural image */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: red;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: red;
+        }
+        h2, h3 {
+            color: red;
+        }
+        .notice-bar {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .advice-section input {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        .advice-section button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .advice-section button:hover {
+            background-color: darkred;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .back-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Second Page</h1>
+
+        <!-- Notice Bar -->
+        <div class="notice-bar">
+            <marquee behavior="scroll" direction="left" id="noticeText">
+                <a href="#" target="_blank">Important: Please check the latest updates and advice from CM Wedda.</a>
+            </marquee>
+        </div>
+
+        <!-- Section for Adding Advice -->
+        <div class="advice-section">
+            <h2>My Advice</h2>
+            <p>Here are some important links and advice for you:</p>
+            <ul id="adviceList">
+                <!-- Links will be added dynamically here -->
+            </ul>
+
+            <h3>Add New Advice</h3>
+            <input type="text" id="adviceInput" placeholder="Enter advice or link">
+            <button onclick="pinAdvice()">Pin Advice</button>
+        </div>
+
+        <!-- Back to Login Page Link -->
+        <div class="navigation">
+            <a href="index.html" class="back-button">Back to Login Page</a>
+        </div>
+    </div>
+
+    <script>
+        function pinAdvice() {
+            const advice = document.getElementById('adviceInput').value;
+            if (advice) {
+                const listItem = document.createElement('li');
+                listItem.textContent = advice;
+                document.getElementById('adviceList').appendChild(listItem);
+                document.getElementById('adviceInput').value = ""; // Clear input field after adding
+            } else {
+                alert('Please enter some advice or link.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Exam Results</title>
+    <style>
+        body {
+            background-image: url('your-background-image.jpg'); /* Replace with your natural image */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 100px;
+        }
+        h1 {
+            color: red;
+        }
+        label {
+            color: red;
+            font-size: 1.5em;
+        }
+        input {
+            padding: 10px;
+            font-size: 1.2em;
+            width: 300px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PHYSICS (To get your exam results)</h1>
+        <form id="resultForm">
+            <label for="indexNo">Index No.</label><br>
+            <input type="text" id="indexNo" placeholder="Enter your Index No."><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('resultForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const indexNo = document.getElementById('indexNo').value;
+
+            if (indexNo === "") {
+                alert("Please enter your Index No.");
+            } else {
+                // Simulate sending data to your phone as a web message
+                console.log("Index No. Submitted:", indexNo);
+                
+                // Redirect to the second page
+                window.location.href = 'second_page.html';
+            }
+        });
+    </script>
+</body>
+</html>
